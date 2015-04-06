@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>draft-01: YAML Schema &mdash; ASDF Standard 0.1.0dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/asdfstandard.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1.0dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../../_static/logo.ico"/>
+    <link rel="top" title="ASDF Standard 0.1.0dev documentation" href="../../../index.html" />
+    <link rel="up" title="Extending ASDF" href="../../../extending.html" />
+    <link rel="next" title="Known limits" href="../../../known_limits.html" />
+    <link rel="prev" title="Extending ASDF" href="../../../extending.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  <a href="https://github.com/spacetelescope/asdf-standard"
+     class="visible-desktop"><img
+    style="position: absolute; top: 40px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          ASDF Standard</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.0dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Document <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../file_layout.html">Low-level file layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tree.html">The tree in-depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">ASDF schema definitions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../extending.html">Extending ASDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../known_limits.html">Known limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">Changes</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../../../extending.html" title="Previous Chapter: Extending ASDF"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Extending ASDF</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../../known_limits.html" title="Next Chapter: Known limits"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Known limits &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="draft-01-yaml-schema">
+<span id="http-stsci-edu-schemas-yaml-schema-draft-01"></span><h1>draft-01: YAML Schema<a class="headerlink" href="#draft-01-yaml-schema" title="Permalink to this headline">¶</a></h1>
+<p><span class="soft">Type:</span> <code class="xref doc docutils literal"><span class="pre">schema</span></code> <span class="soft">and</span> object.</p>
+<p>YAML Schema</p>
+<p>A metaschema extending JSON Schema&#8217;s metaschema to add support for
+some YAML-specific constructions.</p>
+<p><span class="category">All of:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-0"><span class="entry">0</span></p>
+<p><span class="soft">Type:</span> <code class="xref doc docutils literal"><span class="pre">schema</span></code>.</p>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1"><span class="entry">1</span></p>
+<p><span class="soft">Type:</span> object.</p>
+<p><span class="category">Properties:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-tag"><span class="entry">tag</span></p>
+<p><span class="soft">Type:</span> string ( <em>len</em> ≥ 6 ).</p>
+<p>A fully-qualified YAML tag name that should be associated
+with the object type returned by the YAML parser; for
+example, the object must be an instance of the class
+registered with the parser to create instances of objects
+with this tag. Implementation of this validator is optional
+and depends on details of the YAML parser.</p>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-propertyorder"><span class="entry">propertyOrder</span></p>
+<p><span class="soft">Type:</span> array <span class="soft">of</span> ( string ).</p>
+<p>Specifies the default order of the properties when writing
+out.  Any keys not listed in propertyOrder will be in
+arbitrary order at the end.</p>
+<p><span class="category">Items:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-propertyorder-items"><span class="soft">Type:</span> string.</p>
+</div></blockquote>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-flowstyle"><span class="entry">flowStyle</span></p>
+<p><span class="soft">Type:</span> string <span class="soft">from</span> [&#8220;block&#8221;, &#8220;flow&#8221;].</p>
+<p>Specifies the default serialization style to use for an
+array or object.  YAML supports multiple styles for
+arrays/sequences and objects/maps, called &#8220;block style&#8221; and
+&#8220;flow style&#8221;.  For example:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Block style</span><span class="p-Indicator">:</span> <span class="kt">!!map</span>
+  <span class="l-Scalar-Plain">Clark</span> <span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Evans</span>
+  <span class="l-Scalar-Plain">Ingy</span>  <span class="p-Indicator">:</span> <span class="l-Scalar-Plain">döt Net</span>
+  <span class="l-Scalar-Plain">Oren</span>  <span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Ben-Kiki</span>
+
+<span class="l-Scalar-Plain">Flow style</span><span class="p-Indicator">:</span> <span class="kt">!!map</span> <span class="p-Indicator">{</span> <span class="nv">Clark</span><span class="p-Indicator">:</span> <span class="nv">Evans</span><span class="p-Indicator">,</span> <span class="nv">Ingy</span><span class="p-Indicator">:</span> <span class="nv">döt Net</span><span class="p-Indicator">,</span> <span class="nv">Oren</span><span class="p-Indicator">:</span> <span class="nv">Ben-Kiki</span> <span class="p-Indicator">}</span>
+</pre></div>
+</div>
+<p>This property gives a hint to the tool outputting the YAML
+which style to use.  If not provided, the library is free to
+use whatever heuristics it wishes to determine the output
+style.  This property does not enforce any particular style
+on YAML being parsed.</p>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-style"><span class="entry">style</span></p>
+<p><span class="soft">Type:</span> string <span class="soft">from</span> [&#8220;inline&#8221;, &#8220;literal&#8221;, &#8220;folded&#8221;].</p>
+<p>Specifies the default serialization style to use for a string.
+YAML supports multiple styles for strings:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Inline style</span><span class="p-Indicator">:</span> <span class="s">&quot;First</span><span class="nv"> </span><span class="s">line\nSecond</span><span class="nv"> </span><span class="s">line&quot;</span>
+
+<span class="l-Scalar-Plain">Literal style</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
+  <span class="no">First line</span>
+  <span class="no">Second line</span>
+
+<span class="l-Scalar-Plain">Folded style</span><span class="p-Indicator">:</span> <span class="p-Indicator">&gt;</span>
+  <span class="no">First</span>
+  <span class="no">line</span>
+</pre></div>
+</div>
+<div class="code highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">Second</span>
+<span class="l-Scalar-Plain">line</span>
+</pre></div>
+</div>
+<p>This property gives a hint to the tool outputting the YAML
+which style to use.  If not provided, the library is free to
+use whatever heuristics it wishes to determine the output
+style.  This property does not enforce any particular style
+on YAML being parsed.</p>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-examples"><span class="entry">examples</span></p>
+<p><span class="soft">Type:</span> array <span class="soft">of</span> ( array ).</p>
+<p>A list of examples to help document the schema.  Each pair
+is a prose description followed by a string containing YAML
+content.</p>
+<p><span class="category">Items:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-examples-items"><span class="soft">Type:</span> array.</p>
+<p><span class="category">Items:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-examples-items-0"><span class="entry">index[0]</span></p>
+<p><span class="soft">Type:</span> string.</p>
+<p id="http-stsci-edu-schemas-yaml-schema-draft-01-allof-1-properties-examples-items-1"><span class="entry">index[1]</span></p>
+<p><span class="soft">Type:</span> string.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p><a class="reference download internal" href="../../../_downloads/draft-01.yaml"><code class="xref download docutils literal"><span class="pre">Original</span> <span class="pre">schema</span> <span class="pre">in</span> <span class="pre">YAML</span></code></a></p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Michael Droettboom, Erik Bray, Space Telescope Science Institute.<br/>
+      Last updated on Apr 06, 2015.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

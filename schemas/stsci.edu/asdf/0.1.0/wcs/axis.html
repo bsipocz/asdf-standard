@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>axis: Specifies details about an axis in a WCS step. &mdash; ASDF Standard 0.1.0dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/asdfstandard.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../../',
+        VERSION:     '0.1.0dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../../../../_static/logo.ico"/>
+    <link rel="top" title="ASDF Standard 0.1.0dev documentation" href="../../../../../index.html" />
+    <link rel="up" title="WCS" href="../../../../wcs.html" />
+    <link rel="next" title="Extending ASDF" href="../../../../../extending.html" />
+    <link rel="prev" title="step: Describes a single step of a WCS transform pipeline." href="step.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  <a href="https://github.com/spacetelescope/asdf-standard"
+     class="visible-desktop"><img
+    style="position: absolute; top: 40px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../../index.html">
+          ASDF Standard</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.0dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../../../index.html">Document <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../file_layout.html">Low-level file layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tree.html">The tree in-depth</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">ASDF schema definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../extending.html">Extending ASDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../known_limits.html">Known limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../changes.html">Changes</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="step.html" title="Previous Chapter: step: Describes a single step of a WCS transform pipeline."><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; step: Describes ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../../../../extending.html" title="Next Chapter: Extending ASDF"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Extending ASDF &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="axis-specifies-details-about-an-axis-in-a-wcs-step">
+<span id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis"></span><h1>axis: Specifies details about an axis in a WCS step.<a class="headerlink" href="#axis-specifies-details-about-an-axis-in-a-wcs-step" title="Permalink to this headline">¶</a></h1>
+<p><span class="soft">Type:</span> object.</p>
+<p>Specifies details about an axis in a WCS step.</p>
+<p>A standard frame name should be used when appropriate, though
+custom frame names may be used when necessary.</p>
+<p><span class="category">Properties:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-type"><span class="entry">type</span></p>
+<p><span class="soft">Type:</span> any <span class="soft">from</span> [&#8220;celestial&#8221;, &#8220;time&#8221;, &#8220;spectral&#8221;, &#8220;cartesian&#8221;, &#8220;detector&#8221;, &#8220;focal_plane&#8221;, &#8220;custom&#8221;].</p>
+<p>The type of frame for this axis.  It must have one of the
+following values:</p>
+<ul class="simple">
+<li><code class="code docutils literal"><span class="pre">celestial</span></code>: Celestial coordinates.  A <code class="code docutils literal"><span class="pre">celestial_type</span></code>
+property must also be given.</li>
+<li><code class="code docutils literal"><span class="pre">time</span></code>: Time coordinate.  A <code class="code docutils literal"><span class="pre">time_scale</span></code> property must
+also be given.</li>
+<li><code class="code docutils literal"><span class="pre">spectral</span></code>: Spectral coordinate.</li>
+<li><code class="code docutils literal"><span class="pre">cartesian</span></code>: Cartesian coordinate.</li>
+<li><code class="code docutils literal"><span class="pre">detector</span></code>: Native detector coordinate.</li>
+<li><code class="code docutils literal"><span class="pre">focal_plane</span></code>: A coordinate in the focal plane.  Naturally,
+these coordinates will be instrument specific.</li>
+<li><code class="code docutils literal"><span class="pre">custom</span></code>: A custom axis frame that is not one of the above.
+Additional information about the frame may be stored in additional
+properties as a non-standard extension.</li>
+</ul>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-celestial-type"><span class="entry">celestial_type</span></p>
+<p><span class="soft">Type:</span> any <span class="soft">from</span> [&#8220;FK4&#8221;, &#8220;FK5&#8221;, &#8220;Galactic&#8221;, &#8220;ICRS&#8221;].</p>
+<p>If <code class="code docutils literal"><span class="pre">type</span></code> is &#8220;celestial&#8221;, this property must be given.</p>
+<ul class="simple">
+<li>FK4: Celestial coordinates in the FK4 system.  <code class="code docutils literal"><span class="pre">equinox</span></code> and
+<code class="code docutils literal"><span class="pre">observation_time</span></code> may also be given.  <code class="code docutils literal"><span class="pre">name</span></code> should be
+<code class="code docutils literal"><span class="pre">ra</span></code> or <code class="code docutils literal"><span class="pre">dec</span></code>.</li>
+<li>FK5: Celestial coordinates in the FK5 system.  <code class="code docutils literal"><span class="pre">equinox</span></code> may
+also be given.  <code class="code docutils literal"><span class="pre">name</span></code> should be <code class="code docutils literal"><span class="pre">ra</span></code> or <code class="code docutils literal"><span class="pre">dec</span></code>.</li>
+<li>ICRS: Celestial coordinates in the ICRS system.  <code class="code docutils literal"><span class="pre">name</span></code>
+should be <code class="code docutils literal"><span class="pre">ra</span></code> or <code class="code docutils literal"><span class="pre">dec</span></code>.</li>
+<li>galactic: Galactic coordinates.  <code class="code docutils literal"><span class="pre">name</span></code> should be <code class="code docutils literal"><span class="pre">lon</span></code>
+or <code class="code docutils literal"><span class="pre">lat</span></code>.</li>
+</ul>
+<p><span class="soft">Default:</span> &#8220;ICRS&#8221;</p>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-equinox"><span class="entry">equinox</span></p>
+<p><span class="soft">Type:</span> string.</p>
+<p>The equinox of the celestial frame.</p>
+<p><span class="soft">Default:</span> &#8220;J2000&#8221;</p>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-observation-time"><span class="entry">observation_time</span></p>
+<p><span class="soft">Type:</span> string.</p>
+<p>The observation time of the celestial frame, if different from
+<code class="code docutils literal"><span class="pre">equinox</span></code>.</p>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-time-scale"><span class="entry">time_scale</span></p>
+<p><span class="soft">Type:</span> any <span class="soft">from</span> [&#8220;TAI&#8221;, &#8220;TCB&#8221;, &#8220;TCG&#8221;, &#8220;TDB&#8221;, &#8220;TT&#8221;, &#8220;UT1&#8221;, &#8220;UTC&#8221;].</p>
+<p>The time scale of the time axis.  Must be one of:</p>
+<ul class="simple">
+<li>TAI: International Atomic Time</li>
+<li>TCB: Barycentric Coordinate Time</li>
+<li>TCG: Geocentric Coordinate Time</li>
+<li>TDB: Barycentric Dynamical Time</li>
+<li>TT: Terrestrial Time</li>
+<li>UT1: Universal Time</li>
+<li>UTC: Coordinated Universal Time</li>
+</ul>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-spectral-type"><span class="entry">spectral_type</span></p>
+<p><span class="soft">Type:</span> any.</p>
+<p>TODO</p>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-name"><span class="entry">name</span></p>
+<p><span class="soft">Type:</span> string <span class="soft">or</span> any <span class="soft">from</span> [&#8220;ra&#8221;, &#8220;dec&#8221;, &#8220;lon&#8221;, &#8220;lat&#8221;, &#8220;x&#8221;, &#8220;y&#8221;, &#8220;z&#8221;].</p>
+<p>The name of the axis.  If the <code class="code docutils literal"><span class="pre">type</span></code> is multidimensional, such
+as &#8220;celestial&#8221;, this name has meaning, and must correspond to
+it.  For example, for a celestial ICRS frame, it must be either
+&#8220;ra&#8221; or &#8220;dec&#8221;.  Otherwise, it may be an arbitrary name for the
+axis.</p>
+<p><span class="category">Any of:</span></p>
+<blockquote>
+<div><p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-name-anyof-0"><span class="entry">—</span></p>
+<p><span class="soft">Type:</span> string.</p>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-name-anyof-1"><span class="entry">—</span></p>
+<p><span class="soft">Type:</span> any <span class="soft">from</span> [&#8220;ra&#8221;, &#8220;dec&#8221;, &#8220;lon&#8221;, &#8220;lat&#8221;, &#8220;x&#8221;, &#8220;y&#8221;, &#8220;z&#8221;].</p>
+</div></blockquote>
+<p id="http-stsci-edu-schemas-asdf-0-1-0-wcs-axis-properties-unit"><span class="entry">unit</span></p>
+<p><span class="soft">Type:</span> <a class="reference internal" href="../unit/unit.html"><em>unit</em></a>.</p>
+<p>The unit for the axis.</p>
+</div></blockquote>
+<p><a class="reference download internal" href="../../../../../_downloads/axis.yaml"><code class="xref download docutils literal"><span class="pre">Original</span> <span class="pre">schema</span> <span class="pre">in</span> <span class="pre">YAML</span></code></a></p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Michael Droettboom, Erik Bray, Space Telescope Science Institute.<br/>
+      Last updated on Apr 06, 2015.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

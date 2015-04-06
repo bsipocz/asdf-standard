@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Transform &mdash; ASDF Standard 0.1.0dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/asdfstandard.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="top" title="ASDF Standard 0.1.0dev documentation" href="../index.html" />
+    <link rel="up" title="ASDF schema definitions" href="index.html" />
+    <link rel="next" title="transform: A generic type used to mark where other transforms are accepted." href="stsci.edu/asdf/0.1.0/transform/transform.html" />
+    <link rel="prev" title="defunit: Define a new physical unit." href="stsci.edu/asdf/0.1.0/unit/defunit.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+  
+  <a href="https://github.com/spacetelescope/asdf-standard"
+     class="visible-desktop"><img
+    style="position: absolute; top: 40px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          ASDF Standard</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.0dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Document <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file_layout.html">Low-level file layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tree.html">The tree in-depth</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ASDF schema definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">Extending ASDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../known_limits.html">Known limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">Changes</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="stsci.edu/asdf/0.1.0/unit/defunit.html" title="Previous Chapter: defunit: Define a new physical unit."><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; defunit: Define ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="stsci.edu/asdf/0.1.0/transform/transform.html" title="Next Chapter: transform: A generic type used to mark where other transforms are accepted."><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">transform: A gen... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="transform">
+<span id="transform-schema"></span><h1>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">transform</span></code> module contains schema used to describe transformations.</p>
+<p><span class="category">Requires:</span></p>
+<p><a class="reference internal" href="core.html"><em>Core</em></a></p>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/transform.html">transform: A generic type used to mark where other transforms are accepted.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/generic.html">generic: A generic transform.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/identity.html">identity: The identity transform.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/constant.html">constant: A transform that takes no inputs and always outputs a constant value.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/domain.html">domain: Defines the domain of an input axis.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="compound-transformations">
+<h2>Compound transformations<a class="headerlink" href="#compound-transformations" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/compose.html">compose: Perform a list of subtransforms in series.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/concatenate.html">concatenate: Send axes to different subtransforms.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/remap_axes.html">remap_axes: Reorder, add and drop axes.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="arithmetic-operations">
+<h2>Arithmetic operations<a class="headerlink" href="#arithmetic-operations" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/add.html">add: Perform a list of subtransforms in parallel and then add their results together.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/subtract.html">subtract: Perform a list of subtransforms in parallel and then subtract their results.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/multiply.html">multiply: Perform a list of subtransforms in parallel and then multiply their results.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/divide.html">divide: Perform a list of subtransforms in parallel and then divide their results.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/power.html">power: Perform a list of subtransforms in parallel and then raise each result to the power of the next.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="simple-transforms">
+<h2>Simple Transforms<a class="headerlink" href="#simple-transforms" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/shift.html">shift: A Shift opeartion.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/scale.html">scale: A Scale model.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="projections">
+<h2>Projections<a class="headerlink" href="#projections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="affine">
+<h3>Affine<a class="headerlink" href="#affine" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/affine.html">affine: An affine transform.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/rotate2d.html">rotate2d: A 2D rotation.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/rotate3d.html">rotate3d: Rotation in 3D space.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="zenithal-azimuthal">
+<h3>Zenithal (azimuthal)<a class="headerlink" href="#zenithal-azimuthal" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/zenithal.html">zenithal: Base class of all zenithal (or azimuthal) projections.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/gnomonic.html">gnomonic: The gnomonic projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/zenithal_perspective.html">zenithal_perspective: The zenithal perspective projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/stereographic.html">stereographic: The stereographic projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/slant_orthographic.html">slant_orthographic: The slant orthographic projection.</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="cylindrical">
+<h3>Cylindrical<a class="headerlink" href="#cylindrical" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/cylindrical.html">cylindrical: Base class of all cylindrical projections.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/cylindrical_perspective.html">cylindrical_perspective: The cylindrical perspective projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/cylindrical_equal_area.html">cylindrical_equal_area: The cylindrical equal area projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/plate_carree.html">plate_carree: The plate carrée projection.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/mercator.html">mercator: The Mercator projection.</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="polynomials">
+<h2>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stsci.edu/asdf/0.1.0/transform/polynomial.html">polynomial: A Polynomial model.</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Michael Droettboom, Erik Bray, Space Telescope Science Institute.<br/>
+      Last updated on Apr 06, 2015.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
